@@ -21,9 +21,6 @@ import SensitivityIcon from "/public/images/icon-72-sensitivity.svg";
 import RightIcon from "/public/images/icon-chevron-right.svg";
 import BarcodeIcon from "/public/images/icon-36-barcode.svg";
 import KoreaIcon from "/public/images/icon-40-korea.svg";
-import styles from "./sample.module.scss";
-import classNames from "classnames/bind";
-const cx = classNames.bind(styles);
 
 ChartJS.register(
   RadialLinearScale,
@@ -122,6 +119,9 @@ export default function Home() {
     { label: "영어" },
     { label: "중국어" },
     { label: "일본어" },
+    { label: "ㅇㅇㅇ" },
+    { label: "ㅇㅇㅇ" },
+    { label: "ㅇㅇㅇ" },
   ];
 
   return (
