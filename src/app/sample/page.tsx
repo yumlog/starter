@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 import Button from "@/components/Button/Button";
+import Dropdown from "@/components/Dropdown/Dropdown";
 import MoistureIcon from "/public/images/icon-72-moisture.svg";
 import PoresizeIcon from "/public/images/icon-72-poresize.svg";
 import ElasticityIcon from "/public/images/icon-72-elasticity.svg";
@@ -114,6 +115,13 @@ export default function Home() {
     { text: "색소침착", icon: <PigmentationIcon />, angle: 270 },
     { text: "피지분비", icon: <SebumIcon />, angle: 210 },
     { text: "피부민감도", icon: <SensitivityIcon />, angle: 150 },
+  ];
+
+  const list = [
+    { label: "한국어", prefix: <KoreaIcon /> },
+    { label: "영어" },
+    { label: "중국어" },
+    { label: "일본어" },
   ];
 
   return (
@@ -327,6 +335,16 @@ export default function Home() {
             prefix={<KoreaIcon />}
           />
         </div>
+      </div>
+      {/* 드롭다운 */}
+      <div className="border-2 border-gray-15 rounded-lg p-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+          Dropdown
+        </h1>
+        <Dropdown
+          label="선택을할까말까해야겠지길어지면이렇게돼요"
+          list={list}
+        />
       </div>
     </div>
   );

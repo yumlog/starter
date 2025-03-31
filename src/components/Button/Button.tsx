@@ -6,7 +6,7 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 interface ButtonProps {
-  label: React.ReactNode;
+  label?: React.ReactNode;
   suffix?: React.ReactNode;
   prefix?: React.ReactNode;
   color?: "black" | "gray" | "white" | "outline";
@@ -50,9 +50,9 @@ export default function Button({
       disabled={disabled}
       onClick={onClick}
     >
-      {prefix && <span className={cx("prefix")}>{prefix}</span>}
+      {prefix && <>{prefix}</>}
       <span className={cx("label")}>{label}</span>
-      {suffix && <span className={cx("suffix")}>{suffix}</span>}
+      {suffix && <>{suffix}</>}
       {type === "more" && (
         <RightIcon
           className={`
