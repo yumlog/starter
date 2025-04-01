@@ -9,7 +9,7 @@ interface ButtonProps {
   label?: React.ReactNode;
   suffix?: React.ReactNode;
   prefix?: React.ReactNode;
-  color?: "black" | "gray" | "white" | "outline";
+  color?: "black" | "gray" | "white" | "blackline" | "grayline";
   size?: "lg" | "md" | "sm" | "xs";
   type?: "normal" | "text" | "more" | "language";
   block?: boolean;
@@ -51,18 +51,11 @@ export default function Button({
       onClick={onClick}
     >
       {prefix && <>{prefix}</>}
-      <span className={cx("label")}>{label}</span>
+      {label && <span className={cx("label")}>{label}</span>}
       {suffix && <>{suffix}</>}
       {type === "more" && (
         <RightIcon
           className={`
-            ${
-              color === "black"
-                ? "text-gray-100"
-                : color === "gray"
-                ? "text-gray-80"
-                : "text-gray-100"
-            }
             ${
               size === "lg"
                 ? "w-9 aspect-square"

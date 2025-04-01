@@ -21,6 +21,8 @@ import SensitivityIcon from "/public/images/icon-72-sensitivity.svg";
 import RightIcon from "/public/images/icon-chevron-right.svg";
 import BarcodeIcon from "/public/images/icon-36-barcode.svg";
 import KoreaIcon from "/public/images/icon-40-korea.svg";
+import CloseIcon from "/public/images/icon-52-close.svg";
+import HomeIcon from "/public/images/icon-40-home.svg";
 
 ChartJS.register(
   RadialLinearScale,
@@ -263,77 +265,119 @@ export default function Home() {
         <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
           Button
         </h1>
-        <div className="grid grid-cols-4 items-center gap-4">
-          <Button color="black" size="sm" label="button" block />
-          <Button color="gray" size="sm" label="button" block />
-          <Button color="white" size="sm" label="button" block />
-          <Button color="outline" size="sm" label="button" block />
-          <Button color="black" size="sm" label="button" block disabled />
-          <Button color="gray" size="sm" label="button" block disabled />
-          <Button color="white" size="sm" label="button" block disabled />
-          <Button color="outline" size="sm" label="button" block disabled />
-          <Button
-            color="black"
-            size="sm"
-            label="button"
-            block
-            round
-            prefix={<BarcodeIcon className="fill-current text-white" />}
-          />
-          <Button
-            color="black"
-            size="sm"
-            label="button"
-            block
-            round
-            suffix={<BarcodeIcon className="fill-current text-white" />}
-          />
-          <Button
-            color="black"
-            size="sm"
-            label="button"
-            block
-            round
-            prefix={<BarcodeIcon className="fill-current text-white" />}
-            suffix={<BarcodeIcon className="fill-current text-white" />}
-          />
-          <Button
-            color="black"
-            size="sm"
-            label="button"
-            block
-            round
-            disabled
-            prefix={<BarcodeIcon className="fill-current text-white" />}
-            suffix={<BarcodeIcon className="fill-current text-white" />}
-          />
-          <Button color="black" size="lg" label="button" block />
-          <Button color="black" size="md" label="button" block />
-          <Button color="black" size="sm" label="button" block />
-          <Button color="black" size="xs" label="button" block />
-          <Button color="black" size="lg" label="button" type="text" />
-          <Button color="black" size="lg" label="button" type="more" />
-          <Button color="gray" size="md" label="button" type="more" />
-          <Button color="gray" size="sm" label="button" type="more" disabled />
-          <Button
-            color="white"
-            size="sm"
-            label="한국어"
-            type="language"
-            block
-            round
-            prefix={<KoreaIcon />}
-          />
-          <Button
-            color="white"
-            size="sm"
-            label="한국어"
-            type="language"
-            block
-            round
-            disabled
-            prefix={<KoreaIcon />}
-          />
+        <div className="flex flex-col gap-y-2">
+          <p className="font-bold">Size</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button color="black" size="lg" label="button" block />
+            <Button color="black" size="md" label="button" block />
+            <Button color="black" size="sm" label="button" block />
+            <Button color="black" size="xs" label="button" block />
+          </div>
+          <p className="font-bold">Color</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button color="black" size="sm" label="button" block />
+            <Button color="gray" size="sm" label="button" block />
+            <Button color="white" size="sm" label="button" block />
+            <Button color="blackline" size="sm" label="button" block />
+            <Button color="grayline" size="sm" label="button" block />
+          </div>
+          <p className="font-bold">Disabled</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button color="black" size="sm" label="button" block disabled />
+            <Button color="gray" size="sm" label="button" block disabled />
+            <Button color="white" size="sm" label="button" block disabled />
+            <Button color="blackline" size="sm" label="button" block disabled />
+            <Button color="grayline" size="sm" label="button" block disabled />
+          </div>
+          <p className="font-bold">Prefix / Suffix</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button
+              color="black"
+              size="sm"
+              label="button"
+              block
+              round
+              prefix={<BarcodeIcon className="fill-current text-white" />}
+            />
+            <Button
+              color="gray"
+              size="sm"
+              label="button"
+              block
+              round
+              suffix={<BarcodeIcon className="fill-current text-white" />}
+            />
+            <Button
+              color="white"
+              size="sm"
+              label="button"
+              block
+              round
+              prefix={<BarcodeIcon className="fill-current text-white" />}
+              suffix={<BarcodeIcon className="fill-current text-white" />}
+            />
+            <Button
+              color="black"
+              size="sm"
+              label="button"
+              block
+              round
+              disabled
+              prefix={<BarcodeIcon className="fill-current text-white" />}
+              suffix={<BarcodeIcon className="fill-current text-white" />}
+            />
+            <Button
+              color="white"
+              size="sm"
+              label="button"
+              block
+              round
+              disabled
+              prefix={<BarcodeIcon className="fill-current text-white" />}
+              suffix={<BarcodeIcon className="fill-current text-white" />}
+            />
+          </div>
+          <p className="font-bold">Text</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button color="black" size="lg" label="button" type="text" />
+            <Button color="black" size="lg" label="button" type="more" />
+            <Button color="gray" size="md" label="button" type="more" />
+            <Button
+              color="gray"
+              size="sm"
+              label="button"
+              type="more"
+              disabled
+            />
+          </div>
+          <p className="font-bold">Language / Icon Only</p>
+          <div className="grid grid-cols-5 items-center gap-4">
+            <Button
+              color="white"
+              size="sm"
+              label="한국어"
+              type="language"
+              block
+              round
+              prefix={<KoreaIcon />}
+            />
+            <Button
+              color="white"
+              size="sm"
+              label="한국어"
+              type="language"
+              block
+              round
+              disabled
+              prefix={<KoreaIcon />}
+            />
+            <div className="flex items-center gap-x-2 col-span-3">
+              <Button color="white" size="sm" prefix={<CloseIcon />} />
+              <Button color="white" size="sm" disabled prefix={<CloseIcon />} />
+              <Button color="gray" size="xs" prefix={<HomeIcon />} />
+              <Button color="gray" size="xs" disabled prefix={<HomeIcon />} />
+            </div>
+          </div>
         </div>
       </div>
       {/* 드롭다운 */}
