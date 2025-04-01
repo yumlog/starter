@@ -1,18 +1,73 @@
 .dropdown {
   position: relative;
-
   --lg: 120px;
+  --md: 96px;
+  --sm: 72px;
 }
 
 .label {
   display: flex;
   align-items: center;
   width: 100%;
-  height: var(--lg);
   gap: 40px;
   border: 2px solid var(--gray-50);
-  border-radius: var(--rounded-xl);
   padding: 0 32px;
+
+  &:active {
+    background-color: var(--gray-20);
+    border-color: var(--gray-80);
+    span {
+      color: var(--gray-60);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--gray-20);
+    border-color: var(--gray-40);
+    span {
+      color: var(--gray-40);
+    }
+    svg {
+      color: var(--gray-40);
+    }
+  }
+
+  &.size {
+    &-lg {
+      height: var(--lg);
+      border-radius: var(--rounded-xl);
+      span {
+        font-size: var(--h3);
+        font-weight: 600;
+      }
+      & + .list {
+        top: calc(var(--lg) + 16px);
+      }
+    }
+    &-md {
+      height: var(--md);
+      border-radius: var(--rounded-xl);
+      span {
+        font-size: var(--body2);
+        font-weight: 600;
+      }
+      & + .list {
+        top: calc(var(--md) + 16px);
+      }
+    }
+    &-sm {
+      height: var(--sm);
+      border-radius: var(--rounded-lg);
+      span {
+        font-size: var(--body3);
+        font-weight: 400;
+      }
+      & + .list {
+        top: calc(var(--sm) + 16px);
+      }
+    }
+  }
 
   span {
     flex: 1;
@@ -20,26 +75,27 @@
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: left;
-    font-size: var(--h3);
-    font-weight: 600;
-    // color: var(--gray-50);
   }
 }
 
 .list {
   position: absolute;
-  top: calc(var(--lg) + 16px);
   left: 0;
   min-width: 400px;
+  max-width: 600px;
   border-radius: var(--rounded-xl);
   background-color: var(--white);
   border: 1px solid var(--gray-20);
   box-shadow: 0px 8px 24px 0px var(--dim-black-16);
+  overflow: hidden;
+  padding: 12px 0;
+}
 
-  ul {
-    display: flex;
-    flex-direction: column;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: var(--gray-20);
 }
 
 .item {
@@ -48,23 +104,11 @@
   gap: 20px;
   height: 93px;
   padding: 0 32px;
-  border-top: 1px solid var(--gray-20);
-  border-bottom: 1px solid var(--gray-20);
+  text-align: left;
+  background-color: var(--white);
 
   &:active {
     background-color: var(--gray-20);
-  }
-
-  &:first-child {
-    border-top: 0;
-    border-top-left-radius: var(--rounded-xl);
-    border-top-right-radius: var(--rounded-xl);
-  }
-
-  &:last-child {
-    border-bottom: 0;
-    border-bottom-left-radius: var(--rounded-xl);
-    border-bottom-right-radius: var(--rounded-xl);
   }
 
   span {

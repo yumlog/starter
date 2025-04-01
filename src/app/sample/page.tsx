@@ -21,7 +21,7 @@ import SensitivityIcon from "/public/images/icon-72-sensitivity.svg";
 import RightIcon from "/public/images/icon-chevron-right.svg";
 import BarcodeIcon from "/public/images/icon-36-barcode.svg";
 import KoreaIcon from "/public/images/icon-40-korea.svg";
-import CloseIcon from "/public/images/icon-52-close.svg";
+import CloseIcon from "/public/images/icon-close.svg";
 import HomeIcon from "/public/images/icon-40-home.svg";
 
 ChartJS.register(
@@ -372,8 +372,17 @@ export default function Home() {
               prefix={<KoreaIcon />}
             />
             <div className="flex items-center gap-x-2 col-span-3">
-              <Button color="white" size="sm" prefix={<CloseIcon />} />
-              <Button color="white" size="sm" disabled prefix={<CloseIcon />} />
+              <Button
+                color="white"
+                size="sm"
+                prefix={<CloseIcon width={52} height={52} />}
+              />
+              <Button
+                color="white"
+                size="sm"
+                disabled
+                prefix={<CloseIcon width={52} height={52} />}
+              />
               <Button color="gray" size="xs" prefix={<HomeIcon />} />
               <Button color="gray" size="xs" disabled prefix={<HomeIcon />} />
             </div>
@@ -385,10 +394,11 @@ export default function Home() {
         <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
           Dropdown
         </h1>
-        <Dropdown
-          label="선택을할까말까해야겠지길어지면이렇게돼요"
-          list={list}
-        />
+        <div className="grid grid-cols-3 items-center gap-x-2">
+          <Dropdown label="선택을할까말까" list={list} size="lg" />
+          <Dropdown label="선택을할까말까" list={list} size="md" />
+          <Dropdown label="선택을할까말까" list={list} size="sm" disabled />
+        </div>
       </div>
     </div>
   );
