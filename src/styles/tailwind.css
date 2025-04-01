@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --transparent: transparent;
   --black: #000000;
   --white: #ffffff;
   --coral: #ff5753;

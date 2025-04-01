@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -12,6 +13,8 @@ import {
 import { Radar } from "react-chartjs-2";
 import Button from "@/components/Button/Button";
 import Dropdown from "@/components/Dropdown/Dropdown";
+import Checkbox from "@/components/Checkbox/Checkbox";
+import Radio from "@/components/Radio/Radio";
 import MoistureIcon from "/public/images/icon-72-moisture.svg";
 import PoresizeIcon from "/public/images/icon-72-poresize.svg";
 import ElasticityIcon from "/public/images/icon-72-elasticity.svg";
@@ -121,16 +124,15 @@ export default function Home() {
     { label: "영어" },
     { label: "중국어" },
     { label: "일본어" },
-    { label: "ㅇㅇㅇ" },
-    { label: "ㅇㅇㅇ" },
-    { label: "ㅇㅇㅇ" },
+    { label: "프랑스어" },
+    { label: "독일어" },
   ];
 
   return (
     <div className="flex flex-col gap-y-4 p-4">
       {/* 컬러 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
-        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
           Color
         </h1>
         <div className="flex flex-col gap-y-2">
@@ -185,9 +187,10 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
       {/* 타이포그래피 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
-        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
           Typography
         </h1>
         <div className="grid grid-cols-2">
@@ -212,9 +215,10 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
       {/* 레이더차트 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
-        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
           Rador Chart
         </h1>
         <div className="relative p-[240px] w-fit">
@@ -260,9 +264,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* 버튼 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
-        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
           Button
         </h1>
         <div className="flex flex-col gap-y-2">
@@ -389,15 +394,42 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* 드롭다운 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
-        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-2 mb-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
           Dropdown
         </h1>
         <div className="grid grid-cols-3 items-center gap-x-2">
           <Dropdown label="선택을할까말까" list={list} size="lg" />
           <Dropdown label="선택을할까말까" list={list} size="md" />
           <Dropdown label="선택을할까말까" list={list} size="sm" disabled />
+        </div>
+      </div>
+
+      {/* 체크박스 */}
+      <div className="border-2 border-gray-15 rounded-lg p-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
+          Checkbox
+        </h1>
+        <div className="flex flex-col gap-y-2">
+          <div className="flex items-center gap-x-2">
+            <Checkbox label="체크해제" />
+            <Checkbox label="체크됨" checked />
+            <Checkbox label="체크+Disabled" checked disabled />
+            <Checkbox label="Disabled" disabled />
+            <Checkbox label="에러" error />
+          </div>
+          <Radio
+            name="example"
+            wrapClass="flex items-center gap-x-2"
+            options={[
+              { label: "체크해제", value: "1" },
+              { label: "체크됨", value: "2", checked: true },
+              { label: "Disabled", value: "3", disabled: true },
+              { label: "에러", value: "4", error: true },
+            ]}
+          />
         </div>
       </div>
     </div>
