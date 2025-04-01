@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 
 interface TextfieldProps {
   label?: string;
+  type?: "text" | "password";
   placeholder?: string;
   value?: string;
   disabled?: boolean;
@@ -17,6 +18,7 @@ interface TextfieldProps {
 
 export default function Textfield({
   label,
+  type = "text",
   placeholder,
   value: propValue,
   disabled = false,
@@ -30,7 +32,7 @@ export default function Textfield({
       {label && <label className={cx("label")}>{label}</label>}
       <div className={cx("input")}>
         <input
-          type="text"
+          type={type}
           placeholder={placeholder}
           value={value}
           disabled={disabled}

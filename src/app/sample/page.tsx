@@ -17,6 +17,7 @@ import Checkbox from "@/components/Checkbox/Checkbox";
 import Radio from "@/components/Radio/Radio";
 import Badge from "@/components/Badge/Badge";
 import Textfield from "@/components/Textfield/Textfield";
+import Dialog from "@/components/Dialog/Dialog";
 import MoistureIcon from "/public/images/icon-72-moisture.svg";
 import PoresizeIcon from "/public/images/icon-72-poresize.svg";
 import ElasticityIcon from "/public/images/icon-72-elasticity.svg";
@@ -112,6 +113,8 @@ export const options = {
 };
 
 export default function Home() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const labelsWithPositions = [
     { text: "수분감", icon: <MoistureIcon />, angle: 90 },
     { text: "모공크기", icon: <PoresizeIcon />, angle: 30 },
@@ -467,14 +470,20 @@ export default function Home() {
           Textfield
         </h1>
         <div className="grid grid-cols-2 gap-2">
-          <Textfield label="title text area" placeholder="placeholder area" />
           <Textfield
             label="title text area"
+            type="text"
+            placeholder="placeholder area"
+          />
+          <Textfield
+            label="title text area"
+            type="text"
             placeholder="placeholder area"
             value="text contents here"
           />
           <Textfield
             label="title text area"
+            type="password"
             placeholder="placeholder area"
             value="text contents here"
             error
@@ -485,6 +494,33 @@ export default function Home() {
             placeholder="placeholder area"
             disabled
           />
+        </div>
+      </div>
+
+      {/* 다이알로그 */}
+      <div>
+        <div>
+          <Button label="Dialog" onClick={() => setIsDialogOpen(true)} />
+          <Dialog
+            isOpen={isDialogOpen}
+            close={false}
+            dimClose={false}
+            onClose={() => setIsDialogOpen(false)}
+            footer={[
+              {
+                label: "확인",
+                size: "md",
+                color: "black",
+              },
+              {
+                label: "취소",
+                size: "md",
+                color: "grayline",
+              },
+            ]}
+          >
+            Dialog 내용
+          </Dialog>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import styles from "./Button.module.scss";
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
-interface ButtonProps {
+export interface ButtonProps {
   label?: React.ReactNode;
   suffix?: React.ReactNode;
   prefix?: React.ReactNode;

@@ -1,0 +1,58 @@
+.dim {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dim-black-60);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.default {
+  width: 800px;
+  position: relative;
+  margin: auto;
+  border-radius: var(--rounded-xl);
+  transform: scale(0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  background: var(--white);
+
+  &.open {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.bottomsheet {
+  border-top-left-radius: var(--rounded-xl);
+  border-top-right-radius: var(--rounded-xl);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  background: var(--white);
+
+  &.open {
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 48px 64px 48px;
+}
