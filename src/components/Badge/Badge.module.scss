@@ -1,0 +1,62 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0 8px;
+  font-weight: 400;
+  border-radius: var(--rounded-sm);
+}
+
+.color {
+  &-white {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  &-dark {
+    color: var(--white);
+    background-color: var(--gray-80);
+  }
+  &-light {
+    color: var(--gray-100);
+    background-color: var(--gray-20);
+  }
+  &-gray {
+    color: var(--gray-100);
+    background-color: var(--gray-40);
+  }
+  &-red {
+    color: var(--system-red);
+    background-color: rgba(#ff5753, 0.25);
+  }
+  &-blue {
+    color: var(--system-blue);
+    background-color: rgba(#007aff, 0.25);
+  }
+  &-green {
+    color: var(--green-80);
+    background-color: rgba(#74d118, 0.25);
+  }
+  &-orange {
+    color: var(--system-orange);
+    background-color: rgba(#f68a15, 0.25);
+  }
+  &-purple {
+    color: var(--system-purple);
+    background-color: rgba(#aa37ec, 0.25);
+  }
+}
+
+.size {
+  &-md {
+    height: 46px;
+    font-size: var(--body4);
+  }
+  &-sm {
+    height: 40px;
+    font-size: var(--caption);
+  }
+}
+
+.bold {
+  font-weight: 700;
+}

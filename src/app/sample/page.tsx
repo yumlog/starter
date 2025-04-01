@@ -15,6 +15,8 @@ import Button from "@/components/Button/Button";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import Checkbox from "@/components/Checkbox/Checkbox";
 import Radio from "@/components/Radio/Radio";
+import Badge from "@/components/Badge/Badge";
+import Textfield from "@/components/Textfield/Textfield";
 import MoistureIcon from "/public/images/icon-72-moisture.svg";
 import PoresizeIcon from "/public/images/icon-72-poresize.svg";
 import ElasticityIcon from "/public/images/icon-72-elasticity.svg";
@@ -407,28 +409,81 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 체크박스 */}
+      {/* 체크박스 / 라디오 */}
       <div className="border-2 border-gray-15 rounded-lg p-4">
         <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
-          Checkbox
+          Checkbox / Radio
         </h1>
         <div className="flex flex-col gap-y-2">
           <div className="flex items-center gap-x-2">
-            <Checkbox label="체크해제" />
-            <Checkbox label="체크됨" checked />
-            <Checkbox label="체크+Disabled" checked disabled />
-            <Checkbox label="Disabled" disabled />
-            <Checkbox label="에러" error />
+            <Checkbox label="unchecked" />
+            <Checkbox label="checked" checked />
+            <Checkbox label="checked+disabled" checked disabled />
+            <Checkbox label="disabled" disabled />
+            <Checkbox label="error" error />
           </div>
           <Radio
             name="example"
             wrapClass="flex items-center gap-x-2"
             options={[
-              { label: "체크해제", value: "1" },
-              { label: "체크됨", value: "2", checked: true },
-              { label: "Disabled", value: "3", disabled: true },
-              { label: "에러", value: "4", error: true },
+              { label: "unchecked", value: "1" },
+              { label: "checked", value: "2", checked: true },
+              { label: "disabled", value: "3", disabled: true },
+              { label: "error", value: "4", error: true },
             ]}
+          />
+        </div>
+      </div>
+
+      {/* 뱃지 */}
+      <div className="border-2 border-gray-15 rounded-lg p-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
+          Badge
+        </h1>
+        <div className="flex flex-col gap-y-2">
+          <div className="grid grid-cols-8 gap-x-2">
+            <Badge label="label text" color="dark" size="md" bold />
+            <Badge label="label text" color="dark" size="md" />
+            <Badge label="label text" color="dark" size="sm" bold />
+            <Badge label="label text" color="dark" size="sm" />
+          </div>
+          <div className="grid grid-cols-9 gap-x-2">
+            <Badge label="label text" color="white" size="sm" bold />
+            <Badge label="label text" color="dark" size="sm" bold />
+            <Badge label="label text" color="light" size="sm" bold />
+            <Badge label="label text" color="gray" size="sm" bold />
+            <Badge label="label text" color="red" size="sm" bold />
+            <Badge label="label text" color="blue" size="sm" bold />
+            <Badge label="label text" color="green" size="sm" bold />
+            <Badge label="label text" color="orange" size="sm" bold />
+            <Badge label="label text" color="purple" size="sm" bold />
+          </div>
+        </div>
+      </div>
+
+      {/* 텍스트필드 */}
+      <div className="border-2 border-gray-15 rounded-lg p-4">
+        <h1 className="text-h3 font-bold gray-100 bg-gray-15 rounded-lg px-4 mb-4">
+          Textfield
+        </h1>
+        <div className="grid grid-cols-2 gap-2">
+          <Textfield label="title text area" placeholder="placeholder area" />
+          <Textfield
+            label="title text area"
+            placeholder="placeholder area"
+            value="text contents here"
+          />
+          <Textfield
+            label="title text area"
+            placeholder="placeholder area"
+            value="text contents here"
+            error
+            errorMessage="error message"
+          />
+          <Textfield
+            label="title text area"
+            placeholder="placeholder area"
+            disabled
           />
         </div>
       </div>

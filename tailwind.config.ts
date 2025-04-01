@@ -40,6 +40,7 @@ const config: Config = {
         red: "var(--system-red)",
         orange: "var(--system-orange)",
         yellow: "var(--system-yellow)",
+        purple: "var(--system-purple)",
       },
       "dim-black": {
         3: "var(--dim-black-3)",

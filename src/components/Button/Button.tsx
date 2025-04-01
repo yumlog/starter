@@ -55,14 +55,14 @@ export default function Button({
       {suffix && <>{suffix}</>}
       {type === "more" && (
         <RightIcon
-          className={`
+          className={`aspect-square
             ${
               size === "lg"
-                ? "w-9 aspect-square"
+                ? "w-9"
                 : size === "md"
-                ? "w-8 aspect-square"
+                ? "w-8"
                 : size === "sm"
-                ? "w-6 aspect-square"
+                ? "w-6"
                 : ""
             }
           `}
